@@ -41,8 +41,6 @@ const HomeComponet = () => {
                         <h1 className='text-gray-500 font-semibold'>How It Works</h1>
                     </div>
 
-                    <div >
-
                         <div className='flex items-center justify-center w-full gap-4  flex-wrap'>
                             <div className='flex flex-col  justify-center items-center w-[250px] md:w-[300px]'>
                                 <h1 className='w-14 h-14 py-3 bg-gray-500 rounded-full text-center text-2xl text-white font-bold m-auto cursor-pointer  hover:bg-gray-700'>1</h1>
@@ -60,7 +58,7 @@ const HomeComponet = () => {
                                 <p className='text-sm  text-center text-gray-500'>Work with your freelancer and receive your completed website.</p>
                             </div>
                         </div>
-                    </div>
+                
                 </div>
                 <div className='mt-12 mb-6 '>
                     <h1 className='text-gray-500 font-semibold'>What Our Clients Say</h1>

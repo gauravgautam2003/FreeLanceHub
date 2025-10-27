@@ -15,7 +15,7 @@ const ServicePage = () => {
 
                     <p className="text-sm md:text-base mt-4 text-gray-500 max-w-[650px] text-center px-2">From simple landing pages to complex web applications, our network of expert developers can bring any digital vision to life.</p>
                     <div className="flex items-center gap-4 mx-4 mt-6">
-                        <a href="#" className="bg-gray-800 hover:bg-black px-4 md:p-7 py-2.5 md:py-2.5 text-white rounded-md active:scale-95 transition-all">
+                        <a href="#" className="bg-purple-600 hover:bg-purple-500 px-4 md:p-7 py-2.5 md:py-2.5 text-white rounded-md active:scale-95 transition-all">
                             Get started today
                         </a>
                     </div>

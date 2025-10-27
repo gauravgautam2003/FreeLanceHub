@@ -32,9 +32,9 @@ const Footer = () => {
     ];
 
     const contactInfo = [
-        { icon: Mail, text: "hello@freelancehub.com" },
-        { icon: Phone, text: "+1 (555) 123-4567" },
-        { icon: MapPin, text: "San Francisco, CA" },
+        { icon: Mail, text: "gauravgautam9865@gmail.com" },
+        { icon: Phone, text: "+91 9557799584" },
+        { icon: MapPin, text: "Uttar Pradesh, Agra" },
     ];
 
     return (
@@ -106,8 +106,8 @@ const Footer = () => {
                                 const IconComponent = item.icon;
                                 return (
                                     <li key={index} className="flex items-center gap-3">
-                                        <IconComponent className="w-4 h-4 text-blue-700 flex-shrink-0" />
-                                        <span className="text-sm hover:text-purple-500">{item.text}</span>
+                                        <IconComponent className="w-4 h-4 text-purple-600 flex-shrink-0" />
+                                        <span className="text-sm cursor-pointer hover:text-purple-500">{item.text}</span>
                                     </li>
                                 );
                             })}
@@ -125,7 +125,7 @@ const Footer = () => {
                             <button
                                 key={index}
                                 onClick={() => onNavigate(link.page)}
-                                className="hover:text-purple-500 transition-colors"
+                                className="hover:text-purple-500 cursor-pointer transition-colors"
                             >
                                 {link.label}
                             </button>

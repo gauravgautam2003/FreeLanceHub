@@ -7,6 +7,7 @@ import ContactPage from './pages/ContactPage'
 import { Routes, Route } from 'react-router-dom'
 import  Footer  from './componets/Footer'
 
+
 const App = () => {
     return (
         <>

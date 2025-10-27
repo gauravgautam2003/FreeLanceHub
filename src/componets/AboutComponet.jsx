@@ -58,7 +58,7 @@ const AboutComponet = () => {
                     <div className="flex flex-col py-4 justify-center items-center border-1 border-gray-300 md:w-[250px] w-full  md:p-6 rounded-lg bg-white shadow-md">
                         <PiMedalBold className='text-5xl text-gray-700 hover:text-black mt-2' />
                         <p className="text-gray-900 text-lg font-semibold ">Quality First</p>
-                        <p className="text-gray-500 text-sm md:w-48 w-full px-4 text-center mt-2">We maintain the highest standards by carefully vetting every freelancer on our platform.</p>
+                        <p className="text-gray-500 text-sm md:w-48 w-full px-4 text-center mt-2">We maintain the highest standards by carefully vetting every freelancer on our platform or website.</p>
                     </div>
                     <div className="flex flex-col py-4 justify-center items-center border-1 border-gray-300 md:w-[250px] w-full md:p-6 rounded-lg bg-white shadow-md">
                         < MdSecurity className='text-5xl text-gray-700 hover:text-black mt-2' />
@@ -79,7 +79,7 @@ const AboutComponet = () => {
                 <div  className='flex md:flex-row  flex-wrap flex-col gap-4 h-auto justify-center items-center m-auto p-4 '>
                     <div className='flex flex-col justify-center items-center w-[300px] border-1 rounded-lg border-gray-400 shadow-2xl shadow-gray-400 gap-2'>
                         <div className='cursor-pointer w-18 h-18 rounded-full mt-4 bg-gray-300'>
-                            <img src="" alt="" />
+                            <img src="#" alt="" />
                         </div>
                         <h2 className='text-md font-bold '>Gaurav Gautam</h2>
                         <button className='rounded-lg bg-gray-300 text-[12px] p-1 cursor-pointer hover:bg-gray-400 font-semibold'>CEO & Founder</button>
@@ -87,7 +87,7 @@ const AboutComponet = () => {
                     </div>
                     <div className='flex flex-col justify-center items-center w-[300px] border-1 rounded-lg shadow-2xl shadow-gray-400 border-gray-400 gap-2'>
                         <div className='w-18 h-18 rounded-full mt-4 bg-gray-300'>
-                            <img src="" alt="" />
+                            <img src="#" alt="" />
                         </div>
                         <h2 className='text-md font-bold '>Gaurav Gautam</h2>
                         <button className='rounded-lg bg-gray-300 text-[12px] p-1 cursor-pointer hover:bg-gray-400 font-semibold'>CEO & Founder</button>
@@ -95,7 +95,7 @@ const AboutComponet = () => {
                     </div>
                     <div className='flex flex-col justify-center items-center w-[300px]  border-1 rounded-lg shadow-2xl shadow-gray-400 border-gray-400 gap-2'>
                         <div className='w-18 h-18 rounded-full mt-4 bg-gray-300'>
-                            <img src="" alt="" />
+                            <img src="#" alt="" />
                         </div>
                         <h2 className='text-md font-bold '>Gaurav Gautam</h2>
                         <button className='rounded-lg bg-gray-300 text-[12px] p-1 cursor-pointer hover:bg-gray-400 font-semibold'>CEO & Founder</button>
