@@ -3,7 +3,7 @@ import { useState, createContext } from "react";
 export const UserContext = createContext();
 const UserProvider = ({ children }) => {
 
-    const [activeTab, setActiveTab] = useState("client");
+    const [selected, setselected] = useState("client");
     const [currState, setCurrState] = useState("signup");
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -15,7 +15,7 @@ const UserProvider = ({ children }) => {
 
 
     const value = {
-        activeTab,
+        selected,
         currState,
         name,
         email,
@@ -24,7 +24,7 @@ const UserProvider = ({ children }) => {
         subject,
         projectType,
         message,
-        setActiveTab,
+        setselected,
         setCurrState,
         setName,
         setEmail,

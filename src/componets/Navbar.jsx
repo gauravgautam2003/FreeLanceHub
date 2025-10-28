@@ -11,7 +11,7 @@ const Navbar = () => {
 
     const [open, setOpen] = useState(false)
     const [form, setForm] = useState(false)
-    const {activeTab, setActiveTab} = useContext(UserContext)
+    const {selected, setselected} = useContext(UserContext)
 
 
     return (
@@ -33,18 +33,12 @@ const Navbar = () => {
                     </ul>
 
                     <div className='flex gap-0.5'>
-                        <button onClick={() => setForm(true)} type="button" className="bg-white text-gray-600 border border-gray-300 md:inline hidden text-sm hover:bg-gray-50 active:scale-95 transition-all w-20 h-8  rounded-lg">
+                        <button onClick={() => setForm(true)} type="button" className="bg-purple-600 text-white opacity-80 border border-gray-300 md:inline hidden text-sm hover:bg-purple-500 active:scale-95 transition-all w-20 h-8  rounded-lg">
                             Sign Up
                         </button>
                         <div className='absolute md:top-12 md:right-70 right-0 top-20'>
                             {form ? <SignupForm form={form} setFrom={setForm}/> : null}
                         </div>
-
-
-                            <button  onClick={() => setForm(true)} type="button" className="bg-purple-600 text-white border border-gray-300 md:inline hidden text-sm hover:bg-purple-500 active:scale-95 transition-all w-35 h-8 rounded-lg">
-                            Join  as Developer
-                        </button>
-                        
                     </div>
 
                 </div>

@@ -4,13 +4,13 @@ import { UserContext } from "../../context/UserContext.jsx";
 
 const SignupPage = ({ form, setFrom }) => {
     const {
-        activeTab,
+        selected,
         currState,
         name,
         email,
         password,
         compony,
-        setActiveTab,
+        setselected,
         setCurrState,
         setName,
         setEmail,
@@ -47,36 +47,36 @@ const SignupPage = ({ form, setFrom }) => {
                 </p>
 
                 {/* Tabs */}
-                <div className="md:w-[400px] w-full flex border rounded-md overflow-hidden">
+                <div className="md:w-[400px] w-full flex border rounded-2xl overflow-hidden">
                     <button
-                        onClick={() => setActiveTab("client")}
-                        className={`w-1/2 py-1 font-medium ${activeTab === "client"
-                            ? "bg-purple-600 text-white text-[12px]"
-                            : "bg-gray-100 text-gray-700 text-[12px]"
+                        onClick={() => setselected("client")}
+                        className={`w-1/2 py-1 font-medium ${selected === "client"
+                            ? "bg-purple-600 text-white text-[12px] font-semibold rounded-2xl m-1"
+                            : "bg-gray-100 text-gray-700 text-[12px] font-semibold"
                             }`}
                     >
-                        I Need a Website
+                        Client 
                     </button>
                     <button
-                        onClick={() => setActiveTab("developer")}
-                        className={`w-1/2 py-1 font-medium ${activeTab === "developer"
-                            ? "bg-purple-600 text-white text-[12px]"
-                            : "bg-gray-100 text-gray-700 text-[12px]"
+                        onClick={() => setselected("developer")}
+                        className={`w-1/2 py-1 font-medium ${selected === "developer"
+                            ? "bg-purple-600 text-white text-[12px] font-semibold rounded-2xl m-1"
+                            : "bg-gray-100 text-gray-700 text-[12px] font-semibold"
                             }`}
                     >
-                        I'm a Developer
+                        Developer
                     </button>
                 </div>
 
                 {/* Form Fields */}
                 <div>
                     <h3 className="text-sm font-bold text-gray-700 ">
-                        {activeTab === "client"
+                        {selected === "client"
                             ? "Client Registration"
                             : "Developer Registration"}
                     </h3>
                     <p className="text-xs text-gray-500 mb-1">
-                        {activeTab === "client"
+                        {selected === "client"
                             ? "Get started with your website project"
                             : "Join to find amazing projects"}
                     </p>
@@ -97,7 +97,7 @@ const SignupPage = ({ form, setFrom }) => {
                                         />
                                     </div>
 
-                                    {activeTab === "client" && (
+                                    {selected === "client" && (
                                         <div>
                                             <label className="text-sm font-semibold  text-gray-600">Company (Optional)</label>
                                             <input
@@ -111,7 +111,7 @@ const SignupPage = ({ form, setFrom }) => {
                                         </div>
                                     )}
 
-                                    {activeTab === "developer" && (
+                                    {selected === "developer" && (
                                         <>
                                             <div>
                                                 <label className="text-sm font-semibold text-gray-600">Professional Description</label>
