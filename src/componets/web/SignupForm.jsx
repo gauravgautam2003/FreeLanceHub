@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { useContext } from "react";
 import { UserContext } from "../../context/UserContext.jsx";
+import { useNavigate } from "react-router-dom";
 
 const SignupPage = ({ form, setFrom }) => {
     const {
@@ -18,6 +19,8 @@ const SignupPage = ({ form, setFrom }) => {
         setCompony
     } = useContext(UserContext);
 
+    const navigate = useNavigate();
+
     const handleSignupForm = (e) => {
         e.preventDefault();
 
@@ -26,6 +29,12 @@ const SignupPage = ({ form, setFrom }) => {
         }
 
         const userData = { name, email, password, compony };
+        if(selected === "client"){
+            navigate("/client");
+        }
+        else{
+            navigate("/developer");
+        }
 
     }
 

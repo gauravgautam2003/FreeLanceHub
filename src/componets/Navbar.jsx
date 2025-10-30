@@ -11,7 +11,8 @@ const Navbar = () => {
 
     const [open, setOpen] = useState(false)
     const [form, setForm] = useState(false)
-    const {selected, setselected} = useContext(UserContext)
+    const { selected, setselected } = useContext(UserContext)
+    const [currState, setCurrState] = useState("home");
 
 
     return (
@@ -25,11 +26,11 @@ const Navbar = () => {
 
 
                 <div className='flex gap-4 lg:gap-4 items-center justify-center'>
-                    <ul className="md:flex hidden md:text-sm text-sm items-center gap-10 md:gap-6">
-                        <li><Link className="hover:text-gray-500/80 transition" to="/">Home</Link></li>
-                        <li><Link className="hover:text-gray-500/80 transition" to="/about">About</Link></li>
-                        <li><Link className="hover:text-gray-500/80 transition" to="/services">Services</Link></li>
-                        <li><Link className="hover:text-gray-500/80 transition" to="/contact">Contact Us</Link></li>
+                    <ul className="md:flex font-semibold hidden md:text-sm text-sm items-center gap-10 md:gap-6">
+                        <li><Link onClick={() => setCurrState("home")} className={` transition ${currState === "home" ? "text-black" : "text-gray-400"}`} to="/">Home</Link></li>
+                        <li><Link onClick={() => setCurrState("about")} className={` transition ${currState === "about" ? "text-black" : "text-gray-400"}`} to="/about">About</Link></li>
+                        <li><Link onClick={() => setCurrState("services")} className={` transition ${currState === "services" ? "text-black" : "text-gray-400"}`} to="/services">Services</Link></li>
+                        <li><Link onClick={() => setCurrState("contactus")} className={` transition ${currState === "contactus" ? "text-black" : "text-gray-400"}`} to="/contact">Contact Us</Link></li>
                     </ul>
 
                     <div className='flex gap-0.5'>
@@ -37,7 +38,7 @@ const Navbar = () => {
                             Sign Up
                         </button>
                         <div className='absolute md:top-12 md:right-70 right-0 top-20'>
-                            {form ? <SignupForm form={form} setFrom={setForm}/> : null}
+                            {form ? <SignupForm form={form} setFrom={setForm} /> : null}
                         </div>
                     </div>
 
@@ -45,12 +46,12 @@ const Navbar = () => {
                 <button aria-label="menu-btn" type="button" className="menu-btn inline-block md:hidden active:scale-90 transition">
                     <IoMenu onClick={() => setOpen(!open)} className='text-2xl' />
                 </button>
-                <div className={`mobile-menu absolute top-[70px] right-0 opacity-90    w-3xs h-screen md:w-[400px] bg-gray-200 p-6  md:hidden ${open ? "block" : "hidden"}`}>
+                <div className={`mobile-menu absolute top-[70px] right-0     w-3xs h-screen md:w-[400px] bg-gray-200 p-6  md:hidden ${open ? "block" : "hidden"}`}>
                     <ul onClick={() => setOpen(!open)} className="flex flex-col space-y-4 text-lg">
-                        <li><Link  className="hover:text-gray-500/80 transition " to="/">Home</Link></li>
-                        <li><Link className="hover:text-gray-500/80 transition" to="/about">About</Link></li>
-                        <li><Link className="hover:text-gray-500/80 transition" to="/services">Services</Link></li>
-                        <li><Link className="hover:text-gray-500/80 transition" to="/contact">Contact Us</Link></li>
+                        <li><Link onClick={() => setCurrState("home")} className={` transition ${currState === "home" ? "text-black" : "text-gray-400"}`} to="/">Home</Link></li>
+                        <li><Link onClick={() => setCurrState("about")} className={` transition ${currState === "about" ? "text-black" : "text-gray-400"}`} to="/about">About</Link></li>
+                        <li><Link onClick={() => setCurrState("services")} className={` transition ${currState === "services" ? "text-black" : "text-gray-400"}`} to="/services">Services</Link></li>
+                        <li><Link onClick={() => setCurrState("contactus")} className={` transition ${currState === "contactus" ? "text-black" : "text-gray-400"}`} to="/contact">Contact Us</Link></li>
                     </ul>
 
                     <div className='flex flex-col mt-5 gap-2'>
@@ -59,7 +60,7 @@ const Navbar = () => {
                             setOpen(!open)
 
                         }} type="button" className="bg-white text-gray-600 border border-gray-300 md:inline text-sm hover:bg-gray-50 active:scale-95 transition-all  h-8 rounded-lg w-full">
-                            Sign Up 
+                            Sign Up
                         </button>
                         <button type="button" className="bg-purple-600  text-white border border-gray-300 md:inline text-sm hover:bg-purple-500 active:scale-95 transition-all w-full h-8 rounded-lg">
                             Join  as Developer
@@ -67,7 +68,7 @@ const Navbar = () => {
                     </div>
                 </div>
             </nav>
-            
+
         </>
     )
 }
