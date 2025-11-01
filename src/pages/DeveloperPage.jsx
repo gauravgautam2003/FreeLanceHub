@@ -1,14 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState,  useContext } from 'react'
 import { LuClock2 } from "react-icons/lu";
 import { IoSearch } from "react-icons/io5";
 import { IoLocationOutline } from "react-icons/io5";
 import { LuSend } from "react-icons/lu";
 import { BsCurrencyDollar } from "react-icons/bs";
+import ProposalForm from '../componets/web/ProposalForm';
+import { UserContext } from '../context/UserContext'
+import ProfileForm from '../componets/web/ProfileForm';
 
 const DeveloperPage = () => {
 
     const [selected, setSelected] = useState("Browse Projects");
     const [btnColor, setBtnColor] = useState("All")
+    const { form, setForm } = useContext(UserContext)
     return (
         <>
             <div className='flex md:justify-between flex-col gap-2 md:flex-row  w-full md:h-16 m-auto items-center h-26 px-4 border-b-1 border-b-gray-400'>
@@ -137,10 +141,10 @@ const DeveloperPage = () => {
                                     <p className='text-sm font-mono my-5 px-2'>Need a modern e-commerce website with shopping cart, payment integration, and admin panel.</p>
                                     <div className='grid px-2 mb-6 grid-cols-3 '>
                                         <div className='font-semibold text-gray-600 text-sm'>
-                                            <p className=' flex justify-start items-center text-xs text-purple-400 md:text-sm'><BsCurrencyDollar className='text-green-400 font-bold cursor-pointer text-lg'/>$2,000 - $3,000</p>
+                                            <p className=' flex justify-start items-center text-xs text-purple-400 md:text-sm'><BsCurrencyDollar className='text-green-400 font-bold cursor-pointer text-lg' />$2,000 - $3,000</p>
                                         </div>
                                         <div className='font-semibold text-gray-600 text-sm'>
-                                            <p className=' flex justify-start items-center  text-xs text-purple-400 md:text-sm'><LuClock2 className='text-green-400 font-bold cursor-pointer text-lg'/>.4 - 6 weaks</p>
+                                            <p className=' flex justify-start items-center  text-xs text-purple-400 md:text-sm'><LuClock2 className='text-green-400 font-bold cursor-pointer text-lg' />.4 - 6 weaks</p>
                                         </div>
                                         <div className='flex justify-center items-center gap-1 font-semibold text-gray-600 text-sm'>
                                             <h2 className='w-7 h-7 p-1 rounded-full bg-gray-300 text-xs md:text-sm'>AC</h2>
@@ -151,13 +155,16 @@ const DeveloperPage = () => {
                                     </div>
                                     <div className='flex justify-between md:px-2 items-center'>
                                         <div className='flex flex-col gap-2 font-bold text-gray-700'>
-                                            <div className='flex text-xs my-4 gap-1'>
-                                                <p className='border  gap-1 px-2 border-gray-300 rounded-md py-1 '>View Details</p>
-                                                <p className='border flex justify-center items-center gap-1 px-2 border-gray-200 bg-purple-600 rounded-md text-white py-1 '><LuSend />Submit Proposal</p>
+                                            <div onClick={() => setForm(true)} className='flex text-xs my-4 gap-1'>
+                                                <p className='border  gap-1 px-2 border-gray-300 rounded-md py-1 cursor-pointer'>View Details</p>
+                                                <p className='border flex justify-center items-center gap-1 px-2 border-gray-200 bg-purple-600 rounded-md cursor-pointer  text-white py-1 hover:bg-purple-500 '><LuSend />Submit Code Link</p>
+                                            </div>
+                                            <div className='absolute top-100 left-80  bg-opacity-50 '>
+                                                {form && <ProposalForm />}
                                             </div>
                                         </div>
                                         <div>
-                                            <button className='flex justify-center items-center gap-1 cursor-pointer border px-2  border-gray-300 rounded-md text-sm font-semibold text-gray-800'>Proposals Submitted</button>
+                                            <div className='flex justify-center items-center gap-1 cursor-pointer border px-2  border-gray-300 rounded-md text-sm font-semibold text-gray-800'><span>7</span>Proposals Submitted</div>
                                         </div>
                                     </div>
                                 </div>
@@ -247,9 +254,12 @@ const DeveloperPage = () => {
                                     </div>
 
                                     <div className='flex justify-between md:px-2 items-center'>
-                                        <div className='flex flex-col gap-2 font-bold text-gray-700'>
+                                        <div onClick={() => setForm(true)} className='flex flex-col gap-2 font-bold text-gray-700'>
                                             <div className='flex text-xs my-4 gap-1'>
                                                 <p className='border flex justify-center items-center gap-1 text-md px-3 border-gray-200 bg-purple-600 rounded-md text-white py-1.5 '>Edit Profile</p>
+                                            </div>
+                                            <div className='absolute top-[35%] left-[35%]  bg-opacity-50 '>
+                                                {form && <ProfileForm />}
                                             </div>
                                         </div>
 

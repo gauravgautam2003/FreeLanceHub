@@ -3,21 +3,8 @@ import { useContext } from "react";
 import { UserContext } from "../../context/UserContext.jsx";
 import { useNavigate } from "react-router-dom";
 
-const SignupPage = ({ form, setFrom }) => {
-    const {
-        selected,
-        currState,
-        name,
-        email,
-        password,
-        compony,
-        setselected,
-        setCurrState,
-        setName,
-        setEmail,
-        setPassword,
-        setCompony
-    } = useContext(UserContext);
+const SignupPage = () => {
+    const { setFrom, selected, currState, name, email, password, compony, setselected, setCurrState, setName, setEmail, setPassword, setCompony } = useContext(UserContext);
 
     const navigate = useNavigate();
 

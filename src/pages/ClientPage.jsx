@@ -1,19 +1,28 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { LuClock2 } from "react-icons/lu";
+import ProjectForm from '../componets/web/ProjectForm';
+import { UserContext } from '../context/UserContext';
 
 const ClientPage = () => {
 
+    const {form, setForm, projectTitle,  category,  projectDesc,  budget,  timeline } = useContext(UserContext)
     const [selected, setSelected] = useState("My Project");
     return (
         <>
-            <div className='flex md:justify-between flex-col gap-2 md:flex-row  w-full md:h-16 m-auto items-center h-26 px-4 border-b-1 border-b-gray-400'>
+            <div className='flex md:justify-between relative flex-col gap-2 md:flex-row  w-full md:h-16 m-auto items-center h-26 px-4 border-b-1 border-b-gray-400'>
                 <div>
                     <h1 className='font-bold md:text-lg text-xl text-gray-700'>Client Dashboard</h1>
                     <p className='text-sm text-gray-500 font-semibold '>Welcome back<span className='px-4'>username</span></p>
                 </div>
                 <div>
-                    <button className='border-1 text-sm md:text-md font-semibold rounded-lg px-4 bg-purple-600  cursor-pointer text-white py-1 hover:bg-purple-500'>+<span className='px-4'>Post new project</span></button>
+                    <button onClick={() => setForm(true)} className='border-1 text-sm md:text-md font-semibold rounded-lg px-4 bg-purple-600  cursor-pointer text-white py-1 hover:bg-purple-500'>+<span className='px-4'>Post new project</span></button>
+
+                    <div className='absolute top-16 md:right-60 '>
+                        {
+                            form && <ProjectForm />
+                        }
+                    </div>
                     <button className='border-1 text-sm md:text-md font-semibold rounded-lg px-4 bg-white md:mx-2 mx-4 cursor-pointer text-gray-700 py-1 hover:bg-purple-500 hover:text-white'>Logout</button>
                 </div>
             </div>
@@ -78,15 +87,15 @@ const ClientPage = () => {
                                             <h2 className='text-xs md:text-sm'>Budget</h2>
                                             <p className='text-xs text-purple-400 md:text-sm'>$2,000 - $3,000</p>
                                         </div>
-                                        <div  className='font-semibold text-gray-600 text-sm'>
+                                        <div className='font-semibold text-gray-600 text-sm'>
                                             <h2 className='text-xs md:text-sm'>Timeline</h2>
                                             <p className='text-xs text-purple-400 md:text-sm'>4 - 6 weaks</p>
                                         </div>
-                                        <div  className='font-semibold text-gray-600 text-sm'>
+                                        <div className='font-semibold text-gray-600 text-sm'>
                                             <h2 className='text-xs md:text-sm'>Proposals</h2>
                                             <p className='text-xs text-purple-400 md:text-sm'>12 received</p>
                                         </div>
-                                        <div  className='font-semibold text-gray-600 text-sm'>
+                                        <div className='font-semibold text-gray-600 text-sm'>
                                             <h2 className='text-xs md:text-sm'>Posted</h2>
                                             <p className='text-xs text-purple-400 md:text-sm'>1/02/2025</p>
                                         </div>
@@ -106,16 +115,16 @@ const ClientPage = () => {
                                             <h1>Active Proposals</h1>
                                             <div className='flex text-xs gap-1'>
                                                 <p>Projects currently receiving proposals from freelancers</p>
-                                            
+
                                             </div>
                                         </div>
-                                    
+
                                     </div>
-                                    
+
                                     <div className='flex justify-center items-center'>
                                         <p className='text-sm font-mono my-5 px-2'>Projects with active proposals will appear here</p>
                                     </div>
-                                
+
                                 </div>
                             </div>
                         </>
@@ -131,16 +140,16 @@ const ClientPage = () => {
                                             <h1>Completed Projects</h1>
                                             <div className='flex text-xs gap-1'>
                                                 <p>Your successfully completed website projects</p>
-                                            
+
                                             </div>
                                         </div>
-                                    
+
                                     </div>
-                                    
+
                                     <div className='flex justify-center items-center'>
                                         <p className='text-sm font-mono my-5 px-2'>Completed projects will appear here</p>
                                     </div>
-                                
+
                                 </div>
                             </div>
                         </>

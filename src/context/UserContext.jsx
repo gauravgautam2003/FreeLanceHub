@@ -12,27 +12,33 @@ const UserProvider = ({ children }) => {
     const [subject, setSubject] = useState("")
     const [projectType, setProjectType] = useState("")
     const [message, setMessage] = useState("")
+    const [form, setForm] = useState(false);
+    const [projectTitle, setProjectTitle] = useState("");
+    const [category, setCategory] = useState("");
+    const [projectDesc, setProjectDesc] = useState("");
+    const [budget, setBudget] = useState("");
+    const [timeline, setTimeline] = useState("")
+    const [userData, setUserData] = useState({});
 
 
     const value = {
-        selected,
-        currState,
-        name,
-        email,
-        password,
-        compony,
-        subject,
-        projectType,
-        message,
-        setselected,
-        setCurrState,
-        setName,
-        setEmail,
-        setPassword,
-        setCompony,
-        setSubject,
-        setProjectType,
-        setMessage
+        selected, setselected,
+        userData, setUserData,
+        projectTitle, setProjectTitle,
+        category, setCategory,
+        projectDesc, setProjectDesc,
+        budget, setBudget,
+        timeline, setTimeline,
+        currState, setCurrState,
+        name, setName,
+        email, setEmail,
+        password, setPassword,
+        compony, setCompony,
+        subject, setSubject,
+        projectType, setProjectType,
+        message, setMessage,
+        form, setForm
+
     }
 
     
